@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p align="center" style="color:#000000; font-size:28px">Рекомендательная система режимов термообработки в цехе №5</p>
+    <form action="" method="post" novalidate>
+        <center>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }}<br>
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </center>
+    </form>
+
+{% endblock %}
